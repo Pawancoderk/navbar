@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="menu-open">menu</div>
+    <div class="nav-container">
+      <div class="menu-close">close</div>
+
+      <nav class="menu">
+        <div class="menu__item item-1">
+          <img src="v.png" class="menu__item-img" alt="" />
+          <a href="#" class="menu__item-link">Project</a>
+        </div>
+        <div class="menu__item item-2">
+          <a href="#" class="menu__item-link">Collection</a>
+          <img src="jimin.jpg" class="menu__item-img" alt="" />
+        </div>
+        <div class="menu__item item-3">
+          <img src="jhope.jpg" class="menu__item-img" alt="" />
+          <a href="#" class="menu__item-link">Materalism</a>
+        </div>
+        <div class="menu__item item-4">
+          <a href="#" class="menu__item-link">Journal</a>
+          <img src="suga.png" class="menu__item-img" alt="" />
+        </div>
+        <div class="menu__item item-5">
+          <img src="rm.jpg" class="menu__item-img" alt="" />
+          <a href="#" class="menu__item-link">Production</a>
+        </div>
+        <div class="menu__item item-6">
+          <a href="#" class="menu__item-link">About</a>
+          <img src="junkook.jpg" class="menu__item-img" alt="" />
+        </div>
+        <div class="menu__item item-7">
+          <img src="jin.jpg" class="menu__item-img" alt="" />
+          <a href="#" class="menu__item-link">Contact</a>
+        </div>
+      </nav>
+    </div>
+    <script>
+      let tl = new TimelineMax({ paused: true });
+
+      tl.to(".nav-container", 1, {
+        left: 0,
+        ease: Expo.easeInOut,
+      });
+
+      tl.staggerFrom(
+        ".menu > div",
+        0.8,
+        { y: 100, opacity: 0, ease: Expo.easeInOut },
+        "0.1",
+        "-=0.4"
+      );
+
+      tl.reverse();
+      $(document).on("click", ".menu-open", function () {
+        tl.reversed(!tl.reversed());
+      });
+
+      $(document).on("click", ".menu-close", function () {
+        tl.reversed(!tl.reversed());
+      });
+
+      
+      $(document).ready(function () {
+        $(".item-1").hover(
+          function () {
+            $(".nav-container").css("background-color", "#9e604b");
+          },
+          function () {
+            $(".nav-container").css("background", "#dfe8e0");
+          }
+        );
+
+        $(".item-2").hover(
+          function () {
+            $(".nav-container").css("background-color", "#bd779c");
+          },
+          function () {
+            $(".nav-container").css("background", "#dfe8e0");
+          }
+        );
+        $(".item-3").hover(
+          function () {
+            $(".nav-container").css("background-color", "#2b3879");
+          },
+          function () {
+            $(".nav-container").css("background", "#dfe8e0");
+          }
+        );
+        $(".item-4").hover(
+          function () {
+            $(".nav-container").css("background-color", "#6c8f89");
+          },
+          function () {
+            $(".nav-container").css("background", "#dfe8e0");
+          }
+        );
+        $(".item-5").hover(
+          function () {
+            $(".nav-container").css("background-color", "#353942");
+          },
+          function () {
+            $(".nav-container").css("background", "#dfe8e0");
+          }
+        );
+        $(".item-6").hover(
+          function () {
+            $(".nav-container").css("background-color", "#c8b9ac");
+          },
+          function () {
+            $(".nav-container").css("background", "#dfe8e0");
+          }
+        );
+        $(".item-7").hover(
+          function () {
+            $(".nav-container").css("background-color", "#999896");
+          },
+          function () {
+            $(".nav-container").css("background", "#dfe8e0");
+          }
+        );
+    });
+    </script>
+  </body>
+</html>
